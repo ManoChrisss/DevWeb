@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão com Efeito Fade</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background: transparent;
+            border: 2px solid #28a745;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: #28a745;
+            z-index: -1;
+            transition: width 0.4s ease;
+        }
+
+        .button:hover {
+            color: #fff;
+        }
+
+        .button:hover::before {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">Passe o cursor aqui</button>
+</body>
+</html>
